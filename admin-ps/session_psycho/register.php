@@ -45,6 +45,7 @@ if (isset($_POST['submit'])) {
 
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -53,12 +54,13 @@ if (isset($_POST['submit'])) {
 
 	<link rel="stylesheet" type="text/css" href="style.css">
 
-	<title>Register Form - Pure Coding</title>
+	<title>Inscription</title>
 </head>
+
 <body>
 	<div class="container">
 		<form action="" method="POST" class="login-email">
-            <p class="login-text" style="font-size: 2rem; font-weight: 800;">Register</p>
+			<p class="login-text" style="font-size: 2rem; font-weight: 800;">Inscription</p>
 			<div class="input-group">
 				<input type="text" placeholder="Username" name="username" value="<?php echo $username; ?>" required>
 			</div>
@@ -68,17 +70,26 @@ if (isset($_POST['submit'])) {
 			<div class="input-group">
 				<input type="date" placeholder="Date de Naissance" name="dateN" value="<?php echo $dateN; ?>" required>
 			</div>
+
 			<div class="input-group">
-				<input type="email" placeholder="Email" name="email" value="<?php echo $email; ?>" required>
+				<form action="">
+					<p>sexe </p>
+					  <input type="radio" id="homme" name="sexe" value="">
+					  <label for="homme">Homme</label><br>
+					  <input type="radio" id="femme" name="sexe" value="">
+					  <label for="femme">Femme</label><br>
+					  <input type="radio" id="autre" name="sexe" value="">
+					  <label for="autre">Autres</label>
+				</form>
+			</div>
+
+			<div class="input-group">
+				<input type="password" placeholder="Password" name="password" value="<?php echo $_POST['password']; ?>"
+					required>
 			</div>
 			<div class="input-group">
-				<input type="email" placeholder="Email" name="email" value="<?php echo $email; ?>" required>
-			</div>
-			<div class="input-group">
-				<input type="password" placeholder="Password" name="password" value="<?php echo $_POST['password']; ?>" required>
-            </div>
-            <div class="input-group">
-				<input type="password" placeholder="Confirm Password" name="cpassword" value="<?php echo $_POST['cpassword']; ?>" required>
+				<input type="password" placeholder="Confirm Password" name="cpassword"
+					value="<?php echo $_POST['cpassword']; ?>" required>
 			</div>
 			<div class="input-group">
 				<button name="submit" class="btn">Register</button>
@@ -87,4 +98,5 @@ if (isset($_POST['submit'])) {
 		</form>
 	</div>
 </body>
+
 </html>
